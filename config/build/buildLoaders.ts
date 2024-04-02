@@ -1,9 +1,15 @@
 import webpack from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BuildOptions } from './types/config'
 
-export const buildLoaders = (): webpack.RuleSetRule[] => {
+export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
 	const cssLoader = {
 		test: /\.s[ac]ss$/i,
-		use: ['style-loader', 'css-loader', 'sass-loader'],
+		use: [
+			options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+			'css-loader',
+			'sass-loader',
+		],
 	}
 
 	const typescriptLoader = {
