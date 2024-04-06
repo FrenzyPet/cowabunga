@@ -1,6 +1,7 @@
 import { AppRouter } from './providers/router'
 import { useTheme } from './providers/theme-provider'
 import { Navbar } from 'widgets/navbar'
+import { Sidebar } from 'widgets/sidebar'
 import { cn } from 'shared/lib/classnames/classnames'
 
 import './styles/index.scss'
@@ -11,7 +12,10 @@ const App = () => {
 	return (
 		<div className={cn('app', {}, [theme])}>
 			<Navbar />
-			<AppRouter />
+			<div className='content-page'>
+				<Sidebar />
+				<AppRouter />
+			</div>
 		</div>
 	)
 }
