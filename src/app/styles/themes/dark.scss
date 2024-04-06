@@ -8,3 +8,7 @@
 	--invert-primary-color: #0232c2;
 	--invert-secondary-color: #0452ff;
 }
+
+.app {
+	transition: color 300ms ease-out, background-color 300ms ease-out;
+}
