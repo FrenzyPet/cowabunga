@@ -1,12 +1,9 @@
-import { Suspense } from 'react'
-import { Route, Routes, Link } from 'react-router-dom'
-
-import { MainPage } from 'pages/main-page'
-import { AboutPage } from 'pages/about-page'
+import { Link } from 'react-router-dom'
+import { AppRouter } from './providers/router'
 import { useTheme } from './providers/theme-provider'
+import { cn } from 'shared/lib/classnames/classnames'
 
 import './styles/index.scss'
-import { cn } from 'shared/lib/classnames/classnames'
 
 const App = () => {
 	const { theme, toggleTheme } = useTheme()
@@ -16,12 +13,7 @@ const App = () => {
 			<button onClick={toggleTheme}>toggle theme</button>
 			<Link to='/'>Главная</Link>
 			<Link to='/about'>О сайте</Link>
-			<Suspense fallback={<div>...Loading</div>}>
-				<Routes>
-					<Route path='/' element={<MainPage />} />
-					<Route path='/about' element={<AboutPage />} />
-				</Routes>
-			</Suspense>
+			<AppRouter />
 		</div>
 	)
 }
