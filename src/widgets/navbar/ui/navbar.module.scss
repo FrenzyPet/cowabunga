@@ -1,0 +1,15 @@
+.wrapper {
+	width: 100%;
+	height: var(--navbar-height);
+	padding: 20px;
+	background: var(--invert-bg-color);
+	display: flex;
+	align-items: center;
+}
+
+.links {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
