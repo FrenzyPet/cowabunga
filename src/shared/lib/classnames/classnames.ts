@@ -9,6 +9,6 @@ export const cn = (
 		cls,
 		...additional.filter(Boolean),
 		Object.entries(mods)
-			.filter(([className, value]) => !!value)
+			.filter(([_, value]) => !!value)
 			.map(([className]) => className),
 	].join(' ')

@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react'
+import { ButtonHTMLAttributes, FC } from 'react'
 import { cn } from 'shared/lib/classnames/classnames'
 import s from './button.module.scss'
 
