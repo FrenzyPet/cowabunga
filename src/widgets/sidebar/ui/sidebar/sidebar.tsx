@@ -1,7 +1,8 @@
 import { FC, useState } from 'react'
 import { cn } from 'shared/lib/classnames/classnames'
-import { ThemeSwitcher } from 'shared/ui/theme-switcher'
 import { LangSwitcher } from 'shared/ui/lang-switcher'
+import { ThemeSwitcher } from 'shared/ui/theme-switcher'
+
 import s from './sidebar.module.scss'
 
 interface ISidebarProps {

@@ -1,8 +1,9 @@
 import { FC } from 'react'
-import { AppLink, AppLinkTheme } from 'shared/ui/app-link'
-import { cn } from 'shared/lib/classnames/classnames'
-import s from './navbar.module.scss'
 import { useTranslation } from 'react-i18next'
+import { cn } from 'shared/lib/classnames/classnames'
+import { AppLink, AppLinkTheme } from 'shared/ui/app-link'
+
+import s from './navbar.module.scss'
 
 interface INavbarProps {
 	className?: string
