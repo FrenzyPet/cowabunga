@@ -5,11 +5,12 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  pipeline:
-    runs-on: ubuntu-latest
+  integration:
     strategy:
       matrix:
+        os: [ubuntu-latest]
         node: [20.x]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Setup Node.js environment
