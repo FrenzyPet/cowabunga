@@ -1,16 +1,17 @@
 .button {
 	cursor: pointer;
 	color: inherit;
+	padding: 6px 15px;
 }
 
 .clear {
+	padding: 0;
 	background: none;
 	border: none;
 	outline: none;
 }
 
 .outline {
-	padding: 10px 15px;
 	border: 1px solid var(--primary-color);
 	color: var(--primary-color);
 	background-color: none;
@@ -48,4 +49,16 @@
 		height: var(--font-line-xl);
 		font-size: var(--font-xl);
 	}
+}
+
+.size_m {
+	font: var(--font-m);
+}
+
+.size_l {
+	font: var(--font-l);
+}
+
+.size_xl {
+	font: var(--font-xl);
 }
