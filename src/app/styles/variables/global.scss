@@ -1,4 +1,5 @@
-:root {
+:root,
+:modal {
 	// Typography
 	--font-family-main: Menlo, Monaco, 'Liberation Mono', 'Courier New', monospace;
 
@@ -20,4 +21,10 @@
 	--sidebar-width-collapsed: 80px;
 
 	--animation-time: 300ms;
+
+	// z-index
+	--modal-z-index: 10;
+
+	// colors
+	--overlay-color: rgba(0 0 0 / 50%);
 }

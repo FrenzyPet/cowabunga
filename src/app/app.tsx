@@ -1,11 +1,11 @@
-import { AppRouter } from './providers/router'
-import { useTheme } from './providers/theme-provider'
+import { Suspense } from 'react'
+import { cn } from 'shared/lib/classnames/classnames'
 import { Navbar } from 'widgets/navbar'
 import { Sidebar } from 'widgets/sidebar'
-import { cn } from 'shared/lib/classnames/classnames'
 
+import { AppRouter } from './providers/router'
+import { useTheme } from './providers/theme-provider'
 import './styles/index.scss'
-import { Suspense } from 'react'
 
 const App = () => {
 	const { theme } = useTheme()
@@ -14,6 +14,7 @@ const App = () => {
 		<div className={cn('app', {}, [theme])}>
 			<Suspense fallback=''>
 				<Navbar />
+
 				<div className='content-page'>
 					<Sidebar />
 					<AppRouter />
