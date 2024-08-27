@@ -8,10 +8,10 @@ import { useTheme } from './providers/theme-provider'
 import './styles/index.scss'
 
 const App = () => {
-	const { theme } = useTheme()
+	useTheme()
 
 	return (
-		<div className={cn('app', {}, [theme])}>
+		<div className={cn('app', {}, [])}>
 			<Suspense fallback=''>
 				<Navbar />
 
