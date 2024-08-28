@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { FC, ReactNode, lazy, useCallback, useEffect, useRef, useState } from 'react'
 import { cn } from 'shared/lib/classnames/classnames'
 
 import s from './modal.module.scss'
@@ -8,12 +8,18 @@ interface IModalProps {
 	children: ReactNode
 	isOpen: boolean
 	onClose: () => void
+	lazy?: boolean
 }
 
 export const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose }) => {
 	const [isClosing, setIsClosing] = useState<boolean>(false)
+	const [isMount, setIsMount] = useState<boolean>(false)
 
 	const timer = useRef<ReturnType<typeof setTimeout>>()
+
+	useEffect(() => {
+		if (isOpen) setIsMount(true)
+	}, [isOpen])
 
 	const closeHandler = useCallback(() => {
 		if (onClose) {
@@ -54,6 +60,10 @@ export const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose })
 			window.removeEventListener('keydown', onKeyDown)
 		}
 	}, [isOpen, onKeyDown])
+
+	if (lazy && !isMount) {
+		return null
+	}
 
 	return (
 		<div className={cn(s.modal, mods, [className])}>

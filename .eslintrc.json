@@ -31,6 +31,8 @@
 		"@typescript-eslint/naming-convention": "off",
 		"@typescript-eslint/consistent-indexed-object-style": "off",
 		"no-console": "warn",
+		"react/display-name": "off",
+		"react/prop-types": "off",
 		"space-before-function-paren": "off",
 		"@typescript-eslint/space-before-function-paren": "off",
 		"@typescript-eslint/no-confusing-void-expression": "off",
