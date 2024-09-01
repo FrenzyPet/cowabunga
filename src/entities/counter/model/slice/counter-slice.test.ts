@@ -1,9 +1,9 @@
-import type { CounterSchema } from '../types/counter-schema'
+import type { ICounterSchema } from '../types/counter-schema'
 import { counterActions, counterReducer } from './counter.slice'
 
 describe('counterSlice', () => {
 	test('decrement action', () => {
-		const state: CounterSchema = {
+		const state: ICounterSchema = {
 			value: 10,
 		}
 
@@ -11,7 +11,7 @@ describe('counterSlice', () => {
 	})
 
 	test('increment action', () => {
-		const state: CounterSchema = {
+		const state: ICounterSchema = {
 			value: 10,
 		}
 

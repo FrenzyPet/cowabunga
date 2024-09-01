@@ -4,5 +4,6 @@
 	"i18n-ally.sourceLanguage": "en",
 	"i18n-ally.extract.ignoredByFiles": {
 		"src/pages/main-page/ui/main-page.tsx": ["ПЕРЕВОД"]
-	}
+	},
+	"cSpell.words": ["LOCALSTORAGE"]
 }

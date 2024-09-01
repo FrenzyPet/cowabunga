@@ -1,3 +1,3 @@
-import type { StoreSchema } from 'app/providers/store-provider/config/store.dto'
+import type { IStoreSchema } from 'app/providers/store-provider/config/store.dto'
 
-export const getCounter = (state: StoreSchema) => state.counter
+export const getCounter = (state: IStoreSchema) => state.counter
