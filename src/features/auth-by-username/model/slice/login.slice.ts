@@ -7,6 +7,7 @@ const initialState: ILoginSchema = {
 	isLoading: false,
 	username: '',
 	password: '',
+	isSuccess: false,
 }
 
 export const loginSlice = createSlice({
@@ -20,6 +21,10 @@ export const loginSlice = createSlice({
 		setPassword: (state, action: PayloadAction<string>) => {
 			state.password = action.payload
 		},
+
+		clearSuccess: (state) => {
+			state.isSuccess = false
+		},
 	},
 
 	extraReducers: (builder) => {
@@ -30,6 +35,7 @@ export const loginSlice = createSlice({
 			})
 			.addCase(loginByUsername.fulfilled, (state) => {
 				state.isLoading = false
+				state.isSuccess = true
 			})
 			.addCase(loginByUsername.rejected, (state, action) => {
 				state.isLoading = false

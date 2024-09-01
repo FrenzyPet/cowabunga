@@ -43,6 +43,8 @@
 				"destructuredArrayIgnorePattern": "_"
 			}
 		],
-		"@typescript-eslint/ban-ts-comment": "off"
+		"@typescript-eslint/ban-ts-comment": "off",
+		"@typescript-eslint/no-dynamic-delete": "off",
+		"@typescript-eslint/prefer-ts-expect-error": "warn"
 	}
 }
