@@ -1,7 +1,8 @@
 import type { EnhancedStore, Reducer, ReducersMapObject, UnknownAction } from '@reduxjs/toolkit'
 import type { ICounterSchema } from 'entities/counter'
+import type { IProfileSchema } from 'entities/profile'
 import type { IUserSchema } from 'entities/user'
-import { ILoginSchema } from 'features/auth-by-username'
+import type { ILoginSchema } from 'features/auth-by-username'
 
 export interface ReducerManager {
 	getReducerMap: () => ReducersMapObject<IStoreSchema>
@@ -14,6 +15,7 @@ export interface IStoreSchema {
 	counter: ICounterSchema
 	user: IUserSchema
 	login?: ILoginSchema
+	profile?: IProfileSchema
 }
 
 export type IStoreSchemaKeys = keyof IStoreSchema

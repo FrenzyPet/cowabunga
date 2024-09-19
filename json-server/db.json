@@ -12,7 +12,14 @@
 	],
 
 	"profile": {
-		"name": "Huerangalo"
+		"first": "Huerangalo",
+		"lastname": "Bykov",
+		"age": 25,
+		"currency": "RUB",
+		"country": "Russia",
+		"city": "Moscow",
+		"username": "admin",
+		"avatar": "https://img.freepik.com/premium-photo/ninja-avatar-with-stealthy-poses-mask-ai-generated_731790-12317.jpg"
 	},
 
 	"users": [

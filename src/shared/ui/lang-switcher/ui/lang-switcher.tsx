@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cn } from 'shared/lib/classnames/classnames'
 import { Button, ButtonTheme } from 'shared/ui/button'
@@ -9,7 +9,7 @@ interface ILangSwitcherProps {
 	className?: string
 }
 
-export const LangSwitcher: FC<ILangSwitcherProps> = ({ className }) => {
+export const LangSwitcher: FC<ILangSwitcherProps> = memo(({ className }) => {
 	const { t, i18n } = useTranslation()
 
 	const toggle = () => {
@@ -20,4 +20,4 @@ export const LangSwitcher: FC<ILangSwitcherProps> = ({ className }) => {
 			{t('rus')}
 		</Button>
 	)
-}
+})

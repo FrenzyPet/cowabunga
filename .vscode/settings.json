@@ -5,5 +5,5 @@
 	"i18n-ally.extract.ignoredByFiles": {
 		"src/pages/main-page/ui/main-page.tsx": ["ПЕРЕВОД"]
 	},
-	"cSpell.words": ["LOCALSTORAGE"]
+	"cSpell.words": ["lastname", "LOCALSTORAGE"]
 }

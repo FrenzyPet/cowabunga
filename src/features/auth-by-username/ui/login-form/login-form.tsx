@@ -1,8 +1,9 @@
 import { loginActions, loginReducer } from 'features/auth-by-username/model/slice/login.slice'
 import { FC, memo, useCallback, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { cn } from 'shared/lib/classnames/classnames'
 import DynamicModuleLoader, { ReducersList } from 'shared/lib/dynamic-module-loader/dynamic-module-loader'
+import { useAppDispatch } from 'shared/lib/hooks/use-app-dispatch'
 import { Button, ButtonTheme } from 'shared/ui/button'
 import { Input } from 'shared/ui/input'
 import { Text } from 'shared/ui/text'
@@ -26,7 +27,7 @@ const initialReducers: ReducersList = {
 }
 
 const LoginForm: FC<ILoginFormProps> = ({ className, onClose }) => {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 
 	const username = useSelector(getLoginUsername)
 	const isSuccess = useSelector(getLoginSuccess)
