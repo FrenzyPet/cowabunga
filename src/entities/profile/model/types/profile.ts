@@ -14,6 +14,7 @@ export interface IProfile {
 export interface IProfileSchema {
 	data?: IProfile
 	isLoading: boolean
+	isSuccess: boolean
 	error?: string
 	readonly: boolean
 }
