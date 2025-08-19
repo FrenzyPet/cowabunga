@@ -1,5 +1,5 @@
 import { FC, ReactNode, lazy, useCallback, useEffect, useRef, useState } from 'react'
-import { cn } from 'shared/lib/classnames/classnames'
+import { Mods, cn } from 'shared/lib/classnames/classnames'
 
 import s from './modal.module.scss'
 
@@ -42,12 +42,12 @@ export const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose })
 		e.stopPropagation()
 	}
 
-	const mods: Record<string, boolean> = {
+	const mods: Mods = {
 		[s.opened]: isOpen,
 		[s.isClosing]: isClosing,
 	}
 
-	const overlayMods: Record<string, boolean> = {
+	const overlayMods: Mods = {
 		[s['overlay--opened']]: isOpen,
 		[s['overlay--closing']]: isClosing,
 	}

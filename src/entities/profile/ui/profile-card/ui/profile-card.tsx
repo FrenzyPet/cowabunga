@@ -1,25 +1,42 @@
-import { profile } from 'console'
-import { getProfileData } from 'entities/profile/model/selectors/get-profile-data/get-profile-data'
-import { getProfileError } from 'entities/profile/model/selectors/get-profile-error/get-profile-error'
-import { getProfileLoading } from 'entities/profile/model/selectors/get-profile-loading/get-profile-loading'
+import { IProfile } from 'entities/profile/model/types/profile'
 import { FC } from 'react'
-import { useSelector } from 'react-redux'
 import { cn } from 'shared/lib/classnames/classnames'
 import { Button, ButtonTheme } from 'shared/ui/button'
 import { Input } from 'shared/ui/input'
+import { Loader } from 'shared/ui/loader'
 import { Text } from 'shared/ui/text'
+import { TextAlign, TextTheme } from 'shared/ui/text/ui/text'
 
 import s from './profile-card.module.scss'
 
 interface IProfileCardProps {
 	className?: string
+	data?: IProfile
+	isLoading?: boolean
+	error?: string
 }
 
-export const ProfileCard: FC<IProfileCardProps> = ({ className }) => {
-	const data = useSelector(getProfileData)
-	const error = useSelector(getProfileError)
-	const isLoading = useSelector(getProfileLoading)
+export const ProfileCard: FC<IProfileCardProps> = ({ className, data, isLoading, error }) => {
+	if (isLoading) {
+		return (
+			<div className={cn(s.profileCard, {}, [className, s.loading])}>
+				<Loader />
+			</div>
+		)
+	}
 
+	if (error) {
+		return (
+			<div className={cn(s.profileCard, {}, [className, s.error])}>
+				<Text
+					theme={TextTheme.ERROR}
+					title='Ошибка загрузки профиля'
+					text={'Попробуйте обновить страницу'}
+					align={TextAlign.CENTER}
+				/>
+			</div>
+		)
+	}
 	return (
 		<div className={cn(s.profileCard, {}, [className])}>
 			<div className={s.header}>

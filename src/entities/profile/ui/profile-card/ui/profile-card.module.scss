@@ -20,3 +20,17 @@
 .button {
 	width: min-content;
 }
+
+.loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 160px;
+}
+
+.error {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 160px;
+}

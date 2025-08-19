@@ -8,16 +8,24 @@ export enum TextTheme {
 	ERROR = 'error',
 }
 
+export enum TextAlign {
+	LEFT = 'left',
+	CENTER = 'center',
+	RIGHT = 'right',
+}
+
 interface ITextProps {
 	className?: string
 	title?: string
 	text?: string
 	theme?: TextTheme
+	align?: TextAlign
 }
 
-export const Text: FC<ITextProps> = ({ className, text, title, theme = TextTheme.PRIMARY }) => {
+export const Text: FC<ITextProps> = ({ className, text, title, theme = TextTheme.PRIMARY, align = TextAlign.LEFT }) => {
 	const textMods = {
 		[s[theme]]: true,
+		[s[align]]: true,
 	}
 
 	return (
