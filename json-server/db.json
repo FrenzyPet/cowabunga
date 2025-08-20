@@ -1,32 +1,53 @@
 {
-	"posts": [
-		{ "id": "1", "title": "a title", "views": 100 },
-		{ "id": "2", "title": "another title", "views": 200 },
-		{ "id": "3", "title": "cowabunga", "views": 300 },
-		{ "id": "4", "title": "shali-lalai", "views": 400 }
-	],
-
-	"comments": [
-		{ "id": "1", "text": "a comment about post 1", "postId": "1" },
-		{ "id": "2", "text": "another comment about post 1", "postId": "1" }
-	],
-
-	"profile": {
-		"first": "Kurtka",
-		"lastname": "Bain",
-		"age": 25,
-		"currency": "RUB",
-		"country": "Russia",
-		"city": "Moscow",
-		"username": "admin",
-		"avatar": "https://img.freepik.com/premium-photo/ninja-avatar-with-stealthy-poses-mask-ai-generated_731790-12317.jpg"
-	},
-
-	"users": [
-		{
-			"id": "1",
-			"username": "admin",
-			"password": "123"
-		}
-	]
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "3",
+      "title": "cowabunga",
+      "views": 300
+    },
+    {
+      "id": "4",
+      "title": "shali-lalai",
+      "views": 400
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "first": "Kurtka",
+    "lastname": "Bain",
+    "age": "2522123",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Korolev",
+    "username": "admin",
+    "avatar": "https://img.freepik.com/premium-photo/ninja-avatar-with-stealthy-poses-mask-ai-generated_731790-12317.jpg"
+  },
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ]
 }

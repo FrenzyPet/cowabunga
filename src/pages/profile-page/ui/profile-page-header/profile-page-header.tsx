@@ -1,4 +1,4 @@
-import { getProfileReadonly, profileActions } from 'entities/profile'
+import { getProfileReadonly, profileActions, updateProfileData } from 'entities/profile'
 import { FC, memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { cn } from 'shared/lib/classnames/classnames'
@@ -25,6 +25,8 @@ const ProfilePageHeader: FC<IProfilePageHeaderProps> = ({ className }) => {
 	}, [dispatch])
 
 	const onSaveProfile = useCallback(() => {
+		// @ts-expect-error
+		dispatch(updateProfileData())
 		dispatch(profileActions.cancelEdit())
 	}, [dispatch])
 
