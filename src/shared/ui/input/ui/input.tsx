@@ -1,5 +1,5 @@
 import { FC, InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react'
-import { cn } from 'shared/lib/classnames/classnames'
+import { Mods, cn } from 'shared/lib/classnames/classnames'
 
 import s from './input.module.scss'
 
@@ -7,16 +7,18 @@ type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 
 interface IInputProps extends HTMLInputProps {
 	className?: string
-	value?: string
+	value?: string | number
 	onChange?: (value: string) => void
 }
 
 export const Input: FC<IInputProps> = memo((props) => {
-	const { className, onChange, value, type, placeholder, autoFocus, ...otherProps } = props
+	const { className, onChange, value, type, placeholder, autoFocus, readOnly, ...otherProps } = props
 
 	const [isFocus, setIsFocus] = useState<boolean>(false)
 	const [carriagePosition, setCarriagePosition] = useState(0)
 	const inputRef = useRef<HTMLInputElement>(null)
+
+	const isCarriageVisible = isFocus && !readOnly
 
 	const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value
@@ -42,8 +44,12 @@ export const Input: FC<IInputProps> = memo((props) => {
 		}
 	}, [autoFocus])
 
+	const mods: Mods = {
+		[s.readonly]: readOnly,
+	}
+
 	return (
-		<div className={cn(s.inputWrapper, {}, [className])}>
+		<div className={cn(s.inputWrapper, mods, [className])}>
 			{!!placeholder && <div className={s.placeholder}>{`${placeholder}>`}</div>}
 
 			<div className={s.carriageWrapper}>
@@ -56,10 +62,11 @@ export const Input: FC<IInputProps> = memo((props) => {
 					onBlur={onBlur}
 					onFocus={onFocus}
 					onSelect={onSelect}
+					readOnly={readOnly}
 					{...otherProps}
 				/>
 
-				{isFocus && <span className={s.carriage} style={{ left: `${carriagePosition * 9.63}px` }} />}
+				{isCarriageVisible && <span className={s.carriage} style={{ left: `${carriagePosition * 9.63}px` }} />}
 			</div>
 		</div>
 	)

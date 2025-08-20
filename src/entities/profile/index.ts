@@ -2,6 +2,8 @@ export { getProfileData } from './model/selectors/get-profile-data/get-profile-d
 export { getProfileError } from './model/selectors/get-profile-error/get-profile-error'
 export { getProfileFirstName } from './model/selectors/get-profile-firstname/get-profile-firstname'
 export { getProfileLoading } from './model/selectors/get-profile-loading/get-profile-loading'
+export { getProfileReadonly } from './model/selectors/get-profile-readonly/get-profile-readonly'
+export { getProfileForm } from './model/selectors/get-profile-form/get-profile-form'
 
 export { ProfileCard } from './ui/profile-card'
 export { profileActions, profileReducer, profileSlice } from './model/slice/profile.slice'
