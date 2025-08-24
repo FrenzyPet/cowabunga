@@ -1,6 +1,7 @@
 import { IProfile } from 'entities/profile/model/types/profile'
 import { FC } from 'react'
-import { cn } from 'shared/lib/classnames/classnames'
+import { Mods, cn } from 'shared/lib/classnames/classnames'
+import { Avatar } from 'shared/ui/avatar'
 import { Input } from 'shared/ui/input'
 import { Loader } from 'shared/ui/loader'
 import { Text } from 'shared/ui/text'
@@ -14,10 +15,12 @@ interface IProfileCardProps {
 	isLoading?: boolean
 	error?: string
 	readonly?: boolean
-	onChangeFirstname: (value?: string) => void
-	onChangeLastname: (value?: string) => void
-	onChangeCity: (value?: string) => void
-	onChangeAge: (value?: string) => void
+	onChangeFirstname?: (value?: string) => void
+	onChangeLastname?: (value?: string) => void
+	onChangeCity?: (value?: string) => void
+	onChangeAge?: (value?: string) => void
+	onChangeUsername?: (value?: string) => void
+	onChangeAvatar?: (value?: string) => void
 }
 
 export const ProfileCard: FC<IProfileCardProps> = (props) => {
@@ -31,6 +34,8 @@ export const ProfileCard: FC<IProfileCardProps> = (props) => {
 		onChangeLastname,
 		onChangeCity,
 		onChangeAge,
+		onChangeAvatar,
+		onChangeUsername,
 	} = props
 
 	if (isLoading) {
@@ -53,9 +58,20 @@ export const ProfileCard: FC<IProfileCardProps> = (props) => {
 			</div>
 		)
 	}
+
+	const mods: Mods = {
+		[s.edit]: !readonly,
+	}
+
 	return (
-		<div className={cn(s.profileCard, {}, [className])}>
+		<div className={cn(s.profileCard, mods, [className])}>
 			<div className={s.data}>
+				{data?.avatar && (
+					<div className={s.avatarWrapper}>
+						<Avatar className={s.avatar} alt='Аватарка' src={data.avatar} size={75} />
+					</div>
+				)}
+
 				<Input value={data?.first} placeholder='Ваше имя' onChange={onChangeFirstname} readOnly={readonly} />
 
 				<Input value={data?.lastname} placeholder='Ваше фамилия' onChange={onChangeLastname} readOnly={readonly} />
@@ -63,6 +79,10 @@ export const ProfileCard: FC<IProfileCardProps> = (props) => {
 				<Input value={data?.age} placeholder='Ваш возраст' onChange={onChangeAge} readOnly={readonly} />
 
 				<Input value={data?.city} placeholder='Город' onChange={onChangeCity} readOnly={readonly} />
+
+				<Input value={data?.username} placeholder='Имя пользователя' onChange={onChangeUsername} readOnly={readonly} />
+
+				<Input value={data?.avatar} placeholder='Ссылка на аватар' onChange={onChangeAvatar} readOnly={readonly} />
 			</div>
 		</div>
 	)

@@ -1,4 +1,5 @@
 .profileCard {
+	position: relative;
 	padding: 20px;
 	border: 2px solid var(--invert-bg-color);
 	display: flex;
@@ -33,4 +34,14 @@
 	align-items: center;
 	justify-content: center;
 	height: 160px;
+}
+
+.avatarWrapper {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+}
+
+.edit {
+	border: 2px solid var(--invert-primary-color);
 }

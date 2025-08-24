@@ -64,6 +64,20 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
 		},
 		[dispatch],
 	)
+
+	const onChangeUsername = useCallback(
+		(value?: string) => {
+			dispatch(profileActions.updateProfile({ username: value ?? '' }))
+		},
+		[dispatch],
+	)
+
+	const onChangeAvatar = useCallback(
+		(value?: string) => {
+			dispatch(profileActions.updateProfile({ avatar: value ?? '' }))
+		},
+		[dispatch],
+	)
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
 			<div className={cn(s.profilePage, {}, [className])}>
@@ -77,6 +91,8 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
 					onChangeLastname={onChangeLastname}
 					onChangeCity={onChangeCity}
 					onChangeAge={onChangeAge}
+					onChangeUsername={onChangeUsername}
+					onChangeAvatar={onChangeAvatar}
 				/>
 			</div>
 		</DynamicModuleLoader>
