@@ -11,3 +11,4 @@ export { getProfileFirstName } from './model/selectors/get-profile-firstname/get
 export { getProfileLoading } from './model/selectors/get-profile-loading/get-profile-loading'
 export { getProfileReadonly } from './model/selectors/get-profile-readonly/get-profile-readonly'
 export { getProfileForm } from './model/selectors/get-profile-form/get-profile-form'
+export { getProfileValidateErrors } from './model/selectors/get-profile-validate-errors/get-profile-validate-errors'
