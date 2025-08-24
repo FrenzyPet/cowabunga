@@ -27,7 +27,6 @@ const ProfilePageHeader: FC<IProfilePageHeaderProps> = ({ className }) => {
 	const onSaveProfile = useCallback(() => {
 		// @ts-expect-error
 		dispatch(updateProfileData())
-		dispatch(profileActions.cancelEdit())
 	}, [dispatch])
 
 	return (
