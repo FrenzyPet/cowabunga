@@ -1,3 +1,5 @@
+import { Country, CountrySelect } from 'entities/country'
+import { Currency, CurrencySelect } from 'entities/currency'
 import { IProfile } from 'entities/profile/model/types/profile'
 import { FC } from 'react'
 import { Mods, cn } from 'shared/lib/classnames/classnames'
@@ -21,6 +23,8 @@ interface IProfileCardProps {
 	onChangeAge?: (value?: string) => void
 	onChangeUsername?: (value?: string) => void
 	onChangeAvatar?: (value?: string) => void
+	onChangeCurrency?: (currency: Currency) => void
+	onChangeCountry?: (country: Country) => void
 }
 
 export const ProfileCard: FC<IProfileCardProps> = (props) => {
@@ -36,6 +40,8 @@ export const ProfileCard: FC<IProfileCardProps> = (props) => {
 		onChangeAge,
 		onChangeAvatar,
 		onChangeUsername,
+		onChangeCurrency,
+		onChangeCountry,
 	} = props
 
 	if (isLoading) {
@@ -83,6 +89,10 @@ export const ProfileCard: FC<IProfileCardProps> = (props) => {
 				<Input value={data?.username} placeholder='Имя пользователя' onChange={onChangeUsername} readOnly={readonly} />
 
 				<Input value={data?.avatar} placeholder='Ссылка на аватар' onChange={onChangeAvatar} readOnly={readonly} />
+
+				<CurrencySelect className={s.input} value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
+
+				<CountrySelect className={s.input} value={data?.country} onChange={onChangeCountry} readonly={readonly} />
 			</div>
 		</div>
 	)

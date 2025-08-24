@@ -1,4 +1,5 @@
-import { Country, Currency } from 'shared/const/common'
+import { Country } from 'entities/country'
+import { Currency } from 'entities/currency'
 
 export interface IProfile {
 	first?: string

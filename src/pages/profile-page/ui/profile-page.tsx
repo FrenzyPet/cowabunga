@@ -1,3 +1,5 @@
+import { Country } from 'entities/country'
+import { Currency } from 'entities/currency'
 import {
 	ProfileCard,
 	fetchProfileData,
@@ -78,6 +80,21 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
 		},
 		[dispatch],
 	)
+
+	const onChangeCurrency = useCallback(
+		(currency: Currency) => {
+			dispatch(profileActions.updateProfile({ currency }))
+		},
+		[dispatch],
+	)
+
+	const onChangeCountry = useCallback(
+		(country: Country) => {
+			dispatch(profileActions.updateProfile({ country }))
+		},
+		[dispatch],
+	)
+
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
 			<div className={cn(s.profilePage, {}, [className])}>
@@ -93,6 +110,8 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
 					onChangeAge={onChangeAge}
 					onChangeUsername={onChangeUsername}
 					onChangeAvatar={onChangeAvatar}
+					onChangeCurrency={onChangeCurrency}
+					onChangeCountry={onChangeCountry}
 				/>
 			</div>
 		</DynamicModuleLoader>
