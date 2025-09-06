@@ -1,5 +1,6 @@
 import type { EnhancedStore, Reducer, ReducersMapObject, UnknownAction } from '@reduxjs/toolkit'
 import type { AxiosInstance } from 'axios'
+import type { IArticleDetailsSchema } from 'entities/article'
 import type { ICounterSchema } from 'entities/counter'
 import type { IProfileSchema } from 'entities/profile'
 import type { IUserSchema } from 'entities/user'
@@ -16,8 +17,11 @@ export interface ReducerManager {
 export interface IStoreSchema {
 	counter: ICounterSchema
 	user: IUserSchema
+
+	// async
 	login?: ILoginSchema
 	profile?: IProfileSchema
+	articleDetails?: IArticleDetailsSchema
 }
 
 export type IStoreSchemaKeys = keyof IStoreSchema

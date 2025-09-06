@@ -1,7 +1,7 @@
 import { Reducer } from '@reduxjs/toolkit'
 import { IReduxStoreWithManager } from 'app/providers/store-provider'
 import { IStoreSchemaKeys } from 'app/providers/store-provider/config/store.dto'
-import { FC, ReactNode, memo, useEffect } from 'react'
+import { FC, ReactNode, useEffect } from 'react'
 import { useStore } from 'react-redux'
 
 export type ReducersList = {
@@ -32,7 +32,7 @@ const DynamicModuleLoader: FC<IDynamicModuleLoaderProps> = ({ children, reducers
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
-	return <>{children}</>
+	return children
 }
 
-export default memo(DynamicModuleLoader)
+export default DynamicModuleLoader
