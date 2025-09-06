@@ -1,6 +1,6 @@
-import { userActions } from 'entities/user'
+import { getUserInit, userActions } from 'entities/user'
 import { Suspense, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { cn } from 'shared/lib/classnames/classnames'
 import { Navbar } from 'widgets/navbar'
 import { Sidebar } from 'widgets/sidebar'
@@ -13,6 +13,7 @@ const App = () => {
 	useTheme()
 
 	const dispatch = useDispatch()
+	const isInit = useSelector(getUserInit)
 
 	useEffect(() => {
 		dispatch(userActions.initAutDate())
@@ -25,7 +26,7 @@ const App = () => {
 
 				<div className='content-page'>
 					<Sidebar />
-					<AppRouter />
+					{isInit && <AppRouter />}
 				</div>
 			</Suspense>
 		</div>

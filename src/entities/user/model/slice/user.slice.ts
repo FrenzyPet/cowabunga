@@ -3,7 +3,9 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage'
 
 import type { IUser, IUserSchema } from '../types/user.dto'
 
-const initialState: IUserSchema = {}
+const initialState: IUserSchema = {
+	_isInit: false,
+}
 
 export const userSlice = createSlice({
 	name: 'user',
@@ -19,6 +21,8 @@ export const userSlice = createSlice({
 			if (user) {
 				state.authData = JSON.parse(user)
 			}
+
+			state._isInit = true
 		},
 
 		logout: (state) => {
