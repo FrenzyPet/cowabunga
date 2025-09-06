@@ -15,6 +15,7 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
 		filename: '[name].[contenthash].js',
 		path: options.paths.build,
 		clean: true,
+		publicPath: '/',
 	},
 
 	devtool: options.isDev ? 'inline-source-map' : undefined,
