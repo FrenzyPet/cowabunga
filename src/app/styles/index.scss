@@ -23,6 +23,7 @@ body {
 
 .page-wrapper {
 	flex-grow: 1;
+	width: 100%;
 	padding: 20px;
 	padding-left: 45px;
 	height: calc(100vh - var(--navbar-height));

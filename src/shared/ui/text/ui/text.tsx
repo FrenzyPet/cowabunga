@@ -14,18 +14,33 @@ export enum TextAlign {
 	RIGHT = 'right',
 }
 
+export enum TextSize {
+	S = 'size_s',
+	M = 'size_m',
+	L = 'size_l',
+}
+
 interface ITextProps {
 	className?: string
 	title?: string
 	text?: string
 	theme?: TextTheme
 	align?: TextAlign
+	size?: TextSize
 }
 
-export const Text: FC<ITextProps> = ({ className, text, title, theme = TextTheme.PRIMARY, align = TextAlign.LEFT }) => {
+export const Text: FC<ITextProps> = ({
+	className,
+	text,
+	title,
+	theme = TextTheme.PRIMARY,
+	align = TextAlign.LEFT,
+	size = TextSize.M,
+}) => {
 	const textMods = {
 		[s[theme]]: true,
 		[s[align]]: true,
+		[s[size]]: true,
 	}
 
 	return (
