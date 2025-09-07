@@ -61,14 +61,16 @@
 			"id": "1",
 			"username": "admin",
 			"password": "123",
-			"role": "ADMIN"
+			"role": "ADMIN",
+			"avatar": "https://img.freepik.com/premium-photo/ninja-avatar-with-stealthy-poses-mask-ai-generated_731790-12317.jpg"
 		},
 
 		{
 			"id": "2",
 			"username": "user",
 			"password": "123",
-			"role": "USER"
+			"role": "USER",
+			"avatar": "https://img.freepik.com/premium-photo/ninja-avatar-with-stealthy-poses-mask-ai-generated_731790-12317.jpg"
 		}
 	],
 

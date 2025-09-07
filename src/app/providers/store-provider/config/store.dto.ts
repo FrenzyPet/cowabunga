@@ -5,6 +5,7 @@ import type { ICounterSchema } from 'entities/counter'
 import type { IProfileSchema } from 'entities/profile'
 import type { IUserSchema } from 'entities/user'
 import type { ILoginSchema } from 'features/auth-by-username'
+import { IArticleDetailsCommentsSchema } from 'pages/article-details-page'
 import type { NavigateOptions, To } from 'react-router-dom'
 
 export interface ReducerManager {
@@ -22,6 +23,7 @@ export interface IStoreSchema {
 	login?: ILoginSchema
 	profile?: IProfileSchema
 	articleDetails?: IArticleDetailsSchema
+	articleDetailsComments?: IArticleDetailsCommentsSchema
 }
 
 export type IStoreSchemaKeys = keyof IStoreSchema
